@@ -1,7 +1,38 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+$base-color: #fff159;
+
+.header-container {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  background-color: $base-color;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-content: center;
+  column-gap: 24px;
+  top: 0px;
+  left: 0px;
+}
+
+.header-logo {
+  height: 40px; 
+}
+
+.search-form {
+  height: 40px;
+  background-color: #fff;
+}
+
+.search-input {
+  width: 100vh;
+  height: 38px;
+  border: 0px;
+  outline-width: 0;
+  padding: 0 0 0 10px;
+}
+
+.search-button {
+  height: 40px;
+  width: 40px;
+  border: 0px;
+}
