@@ -1,5 +1,5 @@
 import { AUTHOR } from '../../shared/author';
-import { countDecimals } from '../../shared/utils';
+import { getDecimals } from '../../shared/utils';
 import { IItemInformation } from './item-information.interface';
 import { IResponseItemDetail } from './response-item-detail.interface';
 
@@ -12,7 +12,7 @@ const detailMapper = (source: IItemInformation, description?: string): IResponse
       price: {
         currency: source.currency_id,
         amount: source.price,
-        decimals: countDecimals(source.price)
+        decimals: getDecimals(source.price)
       },
       picture: source.thumbnail,
       condition: source.condition,

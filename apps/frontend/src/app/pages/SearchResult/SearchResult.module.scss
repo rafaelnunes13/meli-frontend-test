@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background-color: #fff;
+  width: calc(70vw + 80px);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin-top: 64px;
+}

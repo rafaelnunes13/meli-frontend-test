@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import SearchResult from './search-result';
+import SearchBar from './SearchBar';
 
-describe('SearchResult', () => {
+describe('SearchBar', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<SearchResult />);
+    const { baseElement } = render(<SearchBar />);
     expect(baseElement).toBeTruthy();
   });
 });

@@ -1,7 +1,11 @@
 import * as express from 'express';
+import * as cors from 'cors';
 import items from './app/items/items';
 
 const app = express();
+
+app.use(cors());
+app.options('*', cors());
 
 app.get('/api/items', items.list);
 app.get('/api/items/:id/:description?',  items.details);

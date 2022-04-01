@@ -1,6 +1,6 @@
-export const countDecimals = (value: number): number => {
+export const getDecimals = (value: number): number => {
   if (Math.floor(value) === value) {
     return 0;
   }
-  value.toString().split('.')[1] ?? 0
+  return Number(Number(value).toString().split('.')[1] ?? 0);
 }

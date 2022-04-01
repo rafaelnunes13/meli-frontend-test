@@ -1,5 +1,5 @@
 import { AUTHOR } from '../../shared/author';
-import { countDecimals } from '../../shared/utils';
+import { getDecimals } from '../../shared/utils';
 import { IResponseItem, IResponseItemList } from './response-item-list.interface';
 import { ISearchResult, ISearchResultList } from './search-result-list.interface';
 
@@ -10,7 +10,7 @@ const itemFromSrcResult = (result: ISearchResult): IResponseItem => {
     price: {
       currency: result.currency_id,
       amount: result.price,
-      decimals: countDecimals(result.price)
+      decimals: getDecimals(result.price)
     },
     picture: result.thumbnail,
     condition: result.condition,
