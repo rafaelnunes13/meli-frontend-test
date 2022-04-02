@@ -14,6 +14,6 @@ export interface IResponseItemDetail {
     condition: string;
     free_shipping: boolean;
     sold_quantity: number;
-    descricao?: string;
+    description: string;
   }
 }

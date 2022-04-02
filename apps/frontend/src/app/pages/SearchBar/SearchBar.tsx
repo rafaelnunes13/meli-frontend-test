@@ -11,8 +11,13 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = (props: SearchBarProp
   const onSubmit = (event: any) => {
     const searchTerm = event.target.searchTerm.value;
     event.preventDefault();
-    window.history.pushState(null, '', `/items?search=${searchTerm}`);
-    navigate(`/items?search=${searchTerm}`, { replace: true });
+    const route = `/items?search=${searchTerm}`;
+    window.history.pushState(null, '', route);
+    navigate(route, { replace: true });
+  }
+
+  const navigateToHome = () => {
+    navigate('/', { replace: true });
   }
 
   const search = new URLSearchParams(useLocation().search).get('search') ?? '';
@@ -20,7 +25,7 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = (props: SearchBarProp
   return (
     <>
       <header className={styles['header-container']}>
-        <img className={styles['header-logo']} src='https://http2.mlstatic.com/storage/developers-site-cms-admin/268205826549-Mercado-Libre--3-.png'></img>
+        <img onClick={ navigateToHome } className={styles['header-logo']} src='https://http2.mlstatic.com/storage/developers-site-cms-admin/268205826549-Mercado-Libre--3-.png'></img>
         <form className={styles['search-form']} onSubmit={ onSubmit }>
           <input className={styles['search-input']} type='text' name='searchTerm' placeholder='Buscar' defaultValue={search}></input>
           <button className={styles['search-button']}><FaSearch/></button>

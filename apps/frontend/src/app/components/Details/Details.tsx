@@ -14,7 +14,11 @@ const Details: React.FunctionComponent<IDetailsProps> = (props) => {
         <DetailsText details={props.details}/>
       </div>
 
-      <div> Descrição do produto </div>
+      <div>
+        <p><strong className={styles['description-title']}>Descrição do produto</strong></p>
+        { props.details.item.description }
+      </div>
+
     </div>
   );
 }

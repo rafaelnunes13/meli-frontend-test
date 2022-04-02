@@ -8,7 +8,7 @@ export interface IDetailsTextProps {
 
 const DetailsText: React.FunctionComponent<IDetailsTextProps> = (props) => {
   return (
-    <div className={styles['text-container']}>
+    <div>
       <p>{ props.details.item.condition } - { props.details.item.sold_quantity } vendido(s)</p>
       <p><strong>{ props.details.item.title }</strong></p>
       <DetailsPrice price={props.details.item.price}/>
