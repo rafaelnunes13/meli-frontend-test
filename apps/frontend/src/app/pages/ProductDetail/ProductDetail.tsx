@@ -1,14 +1,21 @@
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import getProductDetails from '../../api/get-product-details';
+import Details from '../../components/Details/Details';
+import { IResponseItemDetail } from '../../entities/response-item-detail.interface';
 import styles from './ProductDetail.module.scss';
 
-/* eslint-disable-next-line */
-export interface ProductDetailProps {}
 
-const ProductDetail: React.FunctionComponent<ProductDetailProps> = (props: ProductDetailProps) => {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to ProductDetail!</h1>
-    </div>
-  );
+const ProductDetail: React.FunctionComponent = () => {  
+  const [details, setDetails] = useState<IResponseItemDetail>();
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    getProductDetails(id).then(setDetails);
+  }, [id]);
+  
+  return details ? <main className={styles['main']}><Details details={details} /></main> : null;
 }
 
 export default ProductDetail;

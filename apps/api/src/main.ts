@@ -1,14 +1,13 @@
 import * as express from 'express';
 import * as cors from 'cors';
-import items from './app/items/items';
+import router from './router';
 
 const app = express();
 
 app.use(cors());
 app.options('*', cors());
 
-app.get('/api/items', items.list);
-app.get('/api/items/:id/:description?',  items.details);
+app.use('/api', router);
 
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {

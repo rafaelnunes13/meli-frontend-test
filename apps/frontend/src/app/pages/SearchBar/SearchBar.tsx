@@ -11,7 +11,8 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = (props: SearchBarProp
   const onSubmit = (event: any) => {
     const searchTerm = event.target.searchTerm.value;
     event.preventDefault();
-    navigate(`/items?search=${searchTerm}`, { replace: true, state: 'TEST' });
+    window.history.pushState(null, '', `/items?search=${searchTerm}`);
+    navigate(`/items?search=${searchTerm}`, { replace: true });
   }
 
   const search = new URLSearchParams(useLocation().search).get('search') ?? '';

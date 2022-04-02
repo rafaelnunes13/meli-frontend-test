@@ -32,7 +32,7 @@ describe('detail-mapper.spec |', () => {
       condition: 'new',
       free_shipping: false,
       sold_quantity: 10,
-      descricao: 'Descrição'
+      description: 'Descrição'
     }
   };
 

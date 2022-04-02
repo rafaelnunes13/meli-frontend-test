@@ -1,0 +1,21 @@
+$picture-max-size: 50vw;
+
+.detail-container {
+  display: grid;
+  grid-template-rows: auto, auto;
+  row-gap: 64px;
+  background-color: #fff;
+  margin-top: 64px;
+  width: calc(70vw + 80px);
+}
+
+.header-detail-container {
+  display: grid;
+  grid-template-columns: $picture-max-size auto;
+  column-gap: 24px;
+}
+
+.detail-picture {
+  width: $picture-max-size;
+  max-height: $picture-max-size;
+}

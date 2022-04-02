@@ -1,0 +1,16 @@
+$picture-max-size: 200px;
+
+.item-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: $picture-max-size auto;
+  column-gap: 24px;
+  border-top: 2px solid #d3d3d38a;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.item-picture {
+  max-width: $picture-max-size;
+  height: $picture-max-size;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import List from '../../components/List';
+import searchProducts from '../../api/search-products';
+import List from '../../components/List/List';
 import { IResponseItemList } from '../../entities/response-item-list.interface';
 import styles from './SearchResult.module.scss';
 
@@ -12,14 +13,8 @@ const SearchResult: React.FunctionComponent<SearchResultProps> = (props: SearchR
 
   const search = new URLSearchParams(useLocation().search).get('search');
 
-  useEffect(()=>{
-    fetch(`http://localhost:3333/api/items?q=${search}`)
-      .then(response => response.json())
-      .then(response => {
-        console.log('response', response)
-        return response;
-      })
-      .then(setResult)
+  useEffect(() => {
+    searchProducts(search).then(setResult);
   }, [search]);
 
   return (

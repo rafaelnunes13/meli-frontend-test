@@ -18,7 +18,7 @@ const detailMapper = (source: IItemInformation, description?: string): IResponse
       condition: source.condition,
       free_shipping: source.shipping.free_shipping,
       sold_quantity: source.sold_quantity,
-      descricao: description
+      description
     }
   }
 }
