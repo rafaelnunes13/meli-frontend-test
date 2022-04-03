@@ -7,7 +7,7 @@ export interface IDetailsPriceProps {
     currency: string,
     amount: number,
     decimals: number
-  },
+  }
 }
 
 const DetailsPrice: React.FunctionComponent<IDetailsPriceProps> = (props) => {
