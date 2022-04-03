@@ -13,7 +13,7 @@ const list = async (req, res) => {
 const details = async (req, res) => {
   const response = await axios.get(`${baseUrl}/items/${req.params.id}`);
   const responseDescription = await axios.get(`${baseUrl}/items/${req.params.id}/description`);
-  res.json(detailMapper(response.data, responseDescription.data.plain_text));
+  res.json(detailMapper(response.data, responseDescription.data));
 };
 
 const items = { list, details };

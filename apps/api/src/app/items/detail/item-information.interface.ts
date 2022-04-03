@@ -10,3 +10,8 @@ export interface IItemInformation {
   };
   sold_quantity: number;
 }
+
+
+export interface IItemDescription {
+  plain_text: string;
+}

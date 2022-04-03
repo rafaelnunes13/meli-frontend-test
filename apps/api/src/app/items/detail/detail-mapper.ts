@@ -1,9 +1,9 @@
 import { AUTHOR } from '../../shared/author';
 import { getDecimals } from '../../shared/utils';
-import { IItemInformation } from './item-information.interface';
+import { IItemDescription, IItemInformation } from './item-information.interface';
 import { IResponseItemDetail } from './response-item-detail.interface';
 
-const detailMapper = (source: IItemInformation, description?: string): IResponseItemDetail => {
+const detailMapper = (source: IItemInformation, description?: IItemDescription): IResponseItemDetail => {
   return {
     author: AUTHOR,
     item: {
@@ -18,7 +18,7 @@ const detailMapper = (source: IItemInformation, description?: string): IResponse
       condition: source.condition,
       free_shipping: source.shipping.free_shipping,
       sold_quantity: source.sold_quantity,
-      description
+      description: description.plain_text
     }
   }
 }

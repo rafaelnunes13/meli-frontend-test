@@ -1,5 +1,5 @@
 import { AUTHOR } from '../../shared/author';
-import { IItemInformation } from './item-information.interface';
+import { IItemDescription, IItemInformation } from './item-information.interface';
 import { IResponseItemDetail } from './response-item-detail.interface';
 import detailMapper from './detail-mapper';
 
@@ -17,6 +17,10 @@ describe('detail-mapper.spec |', () => {
     },
     sold_quantity: 10
   };
+
+  const sourceDescription: IItemDescription = {
+    plain_text: 'Descrição'
+  }
 
   const response: IResponseItemDetail = {
     author: AUTHOR,
@@ -37,6 +41,6 @@ describe('detail-mapper.spec |', () => {
   };
 
   it('should map the source to the item details', () => {
-    expect(detailMapper(source, 'Descrição')).toEqual(response);
+    expect(detailMapper(source, sourceDescription)).toEqual(response);
   });
 });

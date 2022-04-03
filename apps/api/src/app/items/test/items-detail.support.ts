@@ -1,5 +1,5 @@
 import { AUTHOR } from '../../shared/author';
-import { IItemInformation } from '../detail/item-information.interface';
+import { IItemDescription, IItemInformation } from '../detail/item-information.interface';
 import { IResponseItemDetail } from '../detail/response-item-detail.interface';
 
 const source: IItemInformation = {
@@ -14,6 +14,10 @@ const source: IItemInformation = {
   },
   sold_quantity: 10
 };
+
+const sourceDescription: IItemDescription = {
+  plain_text: 'Descrição'
+}
 
 const response: IResponseItemDetail = {
   author: AUTHOR,
@@ -40,9 +44,9 @@ const mockListResponse = { json: () => {} };
 const mockGetImplementation = (url: string) => {
   const responses = {
     'https://api.mercadolibre.com/items/item-id': { data: source },
-    'https://api.mercadolibre.com/items/item-id/description': { data: { plain_text: response.item.description } }
+    'https://api.mercadolibre.com/items/item-id/description': { data: sourceDescription }
   };
   return Promise.resolve(responses[url]);
 };
 
-export const detailTestSupport = { source, response, mockListRequest, mockListResponse, mockGetImplementation };
+export const detailTestSupport = { source, sourceDescription, response, mockListRequest, mockListResponse, mockGetImplementation };
