@@ -1,5 +1,5 @@
 import getSymbolFromCurrency from 'currency-symbol-map';
-import { decimalsLeadingZero, integerValueWithThousandSeparator } from '../../../../shared/utils';
+import { addTrailingZero, integerValueWithThousandSeparator } from '../../../../shared/utils';
 import styles from './DetailsPrice.module.scss';
 
 export interface IDetailsPriceProps {
@@ -17,7 +17,7 @@ const DetailsPrice: React.FunctionComponent<IDetailsPriceProps> = (props) => {
       <span> { getSymbolFromCurrency(props.price.currency) } </span>
       { integerValueWithThousandSeparator(props.price.amount) }
       <sup className={styles['details-decimals']}>
-        { decimalsLeadingZero(props.price.decimals) }
+        { addTrailingZero(props.price.decimals) }
       </sup>
     </p>
   );
