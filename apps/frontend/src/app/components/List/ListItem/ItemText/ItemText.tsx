@@ -1,7 +1,7 @@
 import getSymbolFromCurrency from 'currency-symbol-map';
-import { IResponseItem } from '../../../entities/response-item-list.interface';
-import { integerValueWithThousandSeparator } from '../../../shared/utils';
-import ShippingIcon from '../ShippingIcon/ShippingIcon';
+import { IResponseItem } from '../../../../entities/response-item-list.interface';
+import { integerValueWithThousandSeparator } from '../../../../shared/utils';
+import ShippingIcon from './ShippingIcon/ShippingIcon';
 import styles from './ItemText.module.scss';
 
 export interface IItemTextProps {

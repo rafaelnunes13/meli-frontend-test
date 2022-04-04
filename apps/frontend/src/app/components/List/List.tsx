@@ -1,9 +1,9 @@
 import { IResponseItem } from '../../entities/response-item-list.interface';
-import ListItem from '../ListItem/ListItem';
 import styles from './List.module.scss';
+import ListItem from './ListItem/ListItem';
 
 export interface IListProps {
-  items?: Array<IResponseItem>;
+  items: Array<IResponseItem>;
 }
 
 const List: React.FunctionComponent<IListProps> = (props) => {

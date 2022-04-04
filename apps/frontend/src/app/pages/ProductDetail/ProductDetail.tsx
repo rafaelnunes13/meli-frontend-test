@@ -5,7 +5,6 @@ import Details from '../../components/Details/Details';
 import { IResponseItemDetail } from '../../entities/response-item-detail.interface';
 import styles from './ProductDetail.module.scss';
 
-
 const ProductDetail: React.FunctionComponent = () => {  
   const [details, setDetails] = useState<IResponseItemDetail>();
 

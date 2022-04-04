@@ -1,4 +1,5 @@
 import { IResponseItemDetail } from '../../entities/response-item-detail.interface';
+import Translator from '../Translator/Translator';
 import styles from './Details.module.scss';
 import DetailsText from './DetailsText/DetailsText';
 
@@ -15,7 +16,9 @@ const Details: React.FunctionComponent<IDetailsProps> = (props) => {
       </div>
 
       <div>
-        <p><strong className={styles['description-title']}>Descrição do produto</strong></p>
+        <p>
+          <strong className={styles['description-title']}><Translator path='details.productDescription'/></strong>
+        </p>
         { props.details.item.description }
       </div>
 

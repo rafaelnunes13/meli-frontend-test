@@ -19,11 +19,11 @@ const SearchResult: React.FunctionComponent<SearchResultProps> = (props: SearchR
 
   return (
     <>
-    <main className={styles['main']}>
-      <div className={styles['container']}>
-        <List items={result?.items}></List>
-      </div>
-    </main>
+      <main className={styles['main']}>
+        <div className={styles['container']}>
+          <List items={result?.items ?? []}></List>
+        </div>
+      </main>
     </>
   );
 }
