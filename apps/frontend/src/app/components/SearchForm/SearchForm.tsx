@@ -3,15 +3,13 @@ import { FaSearch } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router';
 import styles from './SearchForm.module.scss';
 
-export interface ISearchFormProps {}
-
-const SearchForm: React.FunctionComponent<ISearchFormProps> = (props: ISearchFormProps) => {
+const SearchForm: React.FunctionComponent = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (event: any) => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.target);
+    const data = new FormData(event.currentTarget);
     const searchTerm = data.get('searchTerm');
     navigate(`/items?search=${searchTerm}`);
   }

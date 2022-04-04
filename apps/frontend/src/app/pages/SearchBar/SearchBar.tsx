@@ -3,9 +3,7 @@ import Logo from '../../components/Logo/Logo';
 import SearchForm from '../../components/SearchForm/SearchForm';
 import styles from './SearchBar.module.scss';
 
-export interface SearchBarProps {}
-
-const SearchBar: React.FunctionComponent<SearchBarProps> = (props: SearchBarProps) => {
+const SearchBar: React.FunctionComponent = () => {
 
   return (
     <>

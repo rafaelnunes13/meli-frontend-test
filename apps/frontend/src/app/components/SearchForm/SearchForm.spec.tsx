@@ -14,7 +14,7 @@ jest.mock('react-router', () => ({
 
 jest.mock('react-i18next', () => ({
   ...jest.requireActual('react-i18next'),
-  useTranslation: () => ({ t: () => {} })
+  useTranslation: () => ({ t: jest.fn() })
 }));
 
 describe('SearchForm.spec | SearchForm', () => {
@@ -32,7 +32,7 @@ describe('SearchForm.spec | SearchForm', () => {
     expect(button).toBeTruthy();
     expect(searchInput).toBeTruthy();
 
-    fireEvent.change(searchInput as HTMLInputElement, { target: { value: 'search-value' } } as any)
+    fireEvent.change(searchInput as HTMLInputElement, { target: { value: 'search-value' } })
     fireEvent.click(button as HTMLButtonElement);
 
     expect(mockNavigate).toHaveBeenCalledWith('/items?search=search-value');

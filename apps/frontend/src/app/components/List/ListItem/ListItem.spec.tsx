@@ -36,7 +36,7 @@ describe('ListItem.spec | ListItem', () => {
 
     expect(container).toBeTruthy();
 
-    Simulate.click(container as any);
+    Simulate.click(container as Element );
   
     expect(mockNavigate).toHaveBeenCalledWith('/items/item-id');
   });

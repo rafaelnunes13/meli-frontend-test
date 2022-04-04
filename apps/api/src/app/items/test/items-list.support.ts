@@ -36,6 +36,7 @@ const response: IResponseItemList = {
 
 const mockListRequest = { query: { q: 'search value' } };
 
+// eslint-disable-next-line
 const mockListResponse = { json: () => {} };
 
 export const listTestSupport = { source, response, mockListRequest, mockListResponse };

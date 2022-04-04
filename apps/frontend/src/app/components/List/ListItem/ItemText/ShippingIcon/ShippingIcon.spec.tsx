@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import ShippingIcon, { IShippingIconProps } from './ShippingIcon';
+import ShippingIcon from './ShippingIcon';
 
 describe('ShippingIcon', () => {
   it('should render the component when free shipping is true', () => {

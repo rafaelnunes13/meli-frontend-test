@@ -5,9 +5,7 @@ import List from '../../components/List/List';
 import { IResponseItemList } from '../../entities/response-item-list.interface';
 import styles from './SearchResult.module.scss';
 
-export interface SearchResultProps {}
-
-const SearchResult: React.FunctionComponent<SearchResultProps> = (props: SearchResultProps) => {
+const SearchResult: React.FunctionComponent = () => {
   
   const [result, setResult] = useState<IResponseItemList>();
 
@@ -18,13 +16,11 @@ const SearchResult: React.FunctionComponent<SearchResultProps> = (props: SearchR
   }, [search]);
 
   return (
-    <>
-      <main className={styles['main']}>
-        <div className={styles['container']}>
-          <List items={result?.items ?? []}></List>
-        </div>
-      </main>
-    </>
+    <main className={styles['main']}>
+      <div className={styles['container']}>
+        <List items={result?.items ?? []}></List>
+      </div>
+    </main>
   );
 }
 

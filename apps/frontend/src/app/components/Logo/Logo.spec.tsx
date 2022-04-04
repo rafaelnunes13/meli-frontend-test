@@ -21,7 +21,7 @@ describe('Logo.spec | Logo', () => {
 
     expect(logo).toBeTruthy();
 
-    fireEvent.click(logo as any);
+    fireEvent.click(logo as Element );
 
     expect(mockNavigate).toHaveBeenCalledWith('/');
   });

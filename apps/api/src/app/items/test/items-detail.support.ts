@@ -39,6 +39,7 @@ const response: IResponseItemDetail = {
 
 const mockListRequest = { params: { id: 'item-id' } };
 
+// eslint-disable-next-line
 const mockListResponse = { json: () => {} };
 
 const mockGetImplementation = (url: string) => {
