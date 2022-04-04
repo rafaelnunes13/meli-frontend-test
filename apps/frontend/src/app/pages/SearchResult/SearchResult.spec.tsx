@@ -13,7 +13,7 @@ jest.mock('react-router-dom', () => ({
 
 jest.mock('../../components/List/List', () => () => 'List');
 
-describe('SearchResult', () => {
+describe('SearchResult.spec | SearchResult', () => {
 
   let container: Container | null = null;
 

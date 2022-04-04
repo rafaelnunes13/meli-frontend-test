@@ -26,7 +26,7 @@ jest.mock('../../Translator/Translator', () => {
   return () => 'Translator'
 });
 
-describe('DetailsText', () => {
+describe('DetailsText.spec | DetailsText', () => {
   it('should render the component', () => {
     const { baseElement } = render(<DetailsText details={defaultProps.details}/>);
     expect(baseElement).toBeTruthy();

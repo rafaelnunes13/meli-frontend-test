@@ -9,7 +9,7 @@ const defaultProps: IDetailsPriceProps = {
   }
 }
 
-describe('DetailsPrice', () => {
+describe('DetailsPrice.spec | DetailsPrice', () => {
 
   it('should render the component', () => {
     const { baseElement } = render(<DetailsPrice price={defaultProps.price}/>);

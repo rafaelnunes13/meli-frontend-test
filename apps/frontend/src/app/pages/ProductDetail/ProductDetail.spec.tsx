@@ -8,7 +8,7 @@ jest.mock('../../components/Details/Details', () => {
   return () => <div>Details</div>
 });
 
-describe('ProductDetail', () => {
+describe('ProductDetail.spec | ProductDetail', () => {
 
   let container: Container | null = null;
 

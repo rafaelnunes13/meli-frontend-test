@@ -24,7 +24,7 @@ jest.mock('react-router', () => ({
   useNavigate: () => mockNavigate
 }));
 
-describe('ListItem', () => {
+describe('ListItem.spec | ListItem', () => {
   it('should render the component', () => {
     const { baseElement } = render(<ListItem item={defaultProps.item}/>);
     expect(baseElement).toBeTruthy();
