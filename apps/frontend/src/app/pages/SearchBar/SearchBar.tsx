@@ -27,11 +27,25 @@ const SearchBar: React.FunctionComponent<SearchBarProps> = (props: SearchBarProp
   return (
     <>
       <header className={styles['header-container']}>
-        <img onClick={ navigateToHome } className={styles['header-logo']} src='https://http2.mlstatic.com/storage/developers-site-cms-admin/268205826549-Mercado-Libre--3-.png'/>
+        <img
+          onClick={ navigateToHome }
+          className={styles['header-logo']}
+          src='https://http2.mlstatic.com/storage/developers-site-cms-admin/268205826549-Mercado-Libre--3-.png'/>
+
         <form className={styles['search-form']} onSubmit={ onSubmit }>
-          <input className={styles['search-input']} type='text' name='searchTerm' placeholder={ t('searchBar.searchInputPlaceholder') } defaultValue={search}/>
-          <button className={styles['search-button']}><FaSearch/></button>
+          <input
+            className={styles['search-input']}
+            type='text' name='searchTerm'
+            placeholder={ t('searchBar.searchInputPlaceholder') }
+            defaultValue={search}
+            data-cy='search-input'/>
+          <button
+            className={styles['search-button']}
+            data-cy='search-button'>
+            <FaSearch/>
+          </button>
         </form>
+
       </header>
 
       <Outlet />

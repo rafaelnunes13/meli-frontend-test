@@ -11,7 +11,11 @@ const Details: React.FunctionComponent<IDetailsProps> = (props) => {
   return (
     <div className={styles['detail-container']}>
       <div className={styles['header-detail-container']}>
-        <img className={styles['detail-picture']} src={ props.details.item.picture } alt={ props.details.item.title } />
+        <img
+          className={styles['detail-picture']}
+          src={ props.details.item.picture }
+          alt={ props.details.item.title }
+          data-cy='product-picture'/>
         <DetailsText details={props.details}/>
       </div>
 

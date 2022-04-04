@@ -15,7 +15,7 @@ const ListItem: React.FunctionComponent<IListItemProps> = (props) => {
   }
 
   return (
-    <div className={styles['item-container']} onClick={ handleItemClick }>
+    <div className={styles['item-container']} data-cy='list-item-container' onClick={ handleItemClick }>
       <img className={styles['item-picture']} src={ props.item.picture } alt={ props.item.title } />
       <ItemText item={ props.item }/>
     </div>
